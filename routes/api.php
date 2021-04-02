@@ -24,3 +24,7 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
 $router->group(['prefix' => 'user'], function () use ($router) {
     $router->get('/validate_token', 'ProfileController@validateToken');
 });
+
+$router->group(['prefix' => 'user', 'middleware' => ['auth']], function () use ($router) {
+    $router->get('/profile', 'ProfileController@getProfile');
+});

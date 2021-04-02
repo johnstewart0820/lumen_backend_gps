@@ -32,4 +32,15 @@ class ProfileController extends Controller
             'role' => (string)$user->id_role
         ]);
     }
+
+    public function getProfile(Request $request) {
+        $user = Auth::user();
+        return response()->json([
+            'data' => [
+                'user' => $user,
+            ],
+            'code' => SUCCESS_CODE,
+            'message' => CONFIRM_CODE_SUCCESS_MESSAGE
+        ]);
+    }
 }

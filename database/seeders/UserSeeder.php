@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
     {
         $items = [
             ['id' => 1, 'first_name' => 'Krystian', 'last_name' => 'Bartosiak', 'email' => "admin@gmail.com", 'password' => '$2a$10$epVj4MXedq9N6yk7P2uGNewBWKh11NhnnOHgIqnfoIb20jTeM7wbq', 'country' => 1, 'is_valid' => true],
+            ['id' => 2, 'first_name' => 'Ardit', 'last_name' => 'Halimi', 'email' => "eros0820@protonmail.com", 'password' => '$2a$10$epVj4MXedq9N6yk7P2uGNewBWKh11NhnnOHgIqnfoIb20jTeM7wbq', 'country' => 1, 'is_valid' => true],
 
         ];
         foreach($items as $item)

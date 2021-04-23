@@ -28,3 +28,10 @@ $router->group(['prefix' => 'user'], function () use ($router) {
 $router->group(['prefix' => 'user', 'middleware' => ['auth']], function () use ($router) {
     $router->get('/profile', 'ProfileController@getProfile');
 });
+
+$router->group(['prefix' => 'chat', 'middleware' => ['auth']], function () use ($router) {
+    $router->get('/topic', 'ContactController@getTopicList');
+    $router->get('/message', 'ContactController@getMessageList');
+    $router->post('/send', 'ContactController@createMessage');
+    $router->post('/feedback', 'ContactController@createFeedback');
+});

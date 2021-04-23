@@ -24,6 +24,7 @@ define('JWT_TOKEN_NOTFOUND', 'Authorization Token not found');
 define('SUCCESS_MESSAGE', 'The success response has been received');
 define('FAILED_SEND_MESSAGE', 'Sorry, the confirmation email is not sent. Please try again to register.');
 
+define('SUCCESS_FEEDBACK_CREATE', 'Successfuly leave feadback');
 
 define('NOT_EXIST_ACCOUNT_MESSAGE', 'Konto o podanym adresie e-mail nie istnieje.');
 define('SERVER_ERROR_MESSAGE','An Error is occured on the server.');

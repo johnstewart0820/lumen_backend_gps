@@ -83,18 +83,18 @@ class AuthController extends Controller
             $is_social = $request->input('is_social');
 
             $users = User::where(['email' => $email])->get();
-
             if ($is_social === true) {
+                $password = Hash::make('123456');
                 if (count($users) === 0) {
                     $user = new User();
                     $user->email = $email;
-                    $user->password = '';
+                    $user->password = $password;
                     $user->first_name = $request->input('first_name');
                     $user->last_name = $request->input('last_name');
                     $user->is_valid = true;
                     $user->save();
                 }
-                $input['password'] = '';
+                $input['password'] = '123456';
                 $token = Auth::attempt($input);
                 return response()->json([
                     'code' => SUCCESS_CODE,

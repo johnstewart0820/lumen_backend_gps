@@ -35,3 +35,9 @@ $router->group(['prefix' => 'chat', 'middleware' => ['auth']], function () use (
     $router->post('/send', 'ContactController@createMessage');
     $router->post('/feedback', 'ContactController@createFeedback');
 });
+
+$router->group(['prefix' => 'profile', 'middleware' => ['auth']], function () use ($router) {
+    $router->get('/info', 'ProfileController@getInfo');
+    $router->get('/', 'ProfileController@getUserProfile');
+    $router->post('/update', 'ProfileController@updateProfile');
+});
